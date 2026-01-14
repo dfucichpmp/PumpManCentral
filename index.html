@@ -3,75 +3,118 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PMP Equipment Portal — Hydromatic</title>
-  <meta name="description" content="Static informational landing page with equipment snapshot, Hydromatic documentation links, technician (fake) login, and sample pricing." />
+  <title>PumpMan Pittsburgh — Hydromatic Equipment Portal</title>
+  <meta name="description" content="Million‑dollar mockup: royal blue & white theme, equipment snapshot, Hydromatic docs, technician demo login, sample price page, and service history." />
   <style>
+    /* ===== Theme (Royal Blue & White) ===== */
     :root {
-      --bg:#0f172a; --panel:#0b1220; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#22c55e; --accent-2:#38bdf8; --border:#1f2937; --warn:#f59e0b; --danger:#ef4444; --link:#93c5fd;
+      --royal: #4169E1;      /* Royal Blue */
+      --royal-dark: #0A2C8C; /* Deep Royal */
+      --royal-mid: #1E4ED8;  /* Mid Blue */
+      --sky: #60A5FA;        /* Accent */
+      --ink: #0B1936;        /* Primary text */
+      --muted: #5B6A8B;      /* Muted text */
+      --bg: #FFFFFF;         /* White background */
+      --panel: #F7FAFF;      /* Very light panel */
+      --border: #DCE6FB;     /* Soft border */
+      --shadow: 0 12px 30px rgba(17, 40, 120, .12);
+      --success: #16a34a;
+      --danger: #ef4444;
+      --warning: #f59e0b;
     }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text); }
-    a { color:var(--link); }
-    header { padding:1.75rem 1rem; border-bottom:1px solid var(--border); background:linear-gradient(180deg, rgba(56,189,248,.12), rgba(34,197,94,.10)); }
-    .wrap { max-width: 1160px; margin:0 auto; padding:0 1rem; }
-    .brand { display:flex; align-items:center; gap:.75rem; }
-    .brand .logo { width:38px; height:38px; background:#063; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; font-weight:800; }
-    .brand .logo span { color:#a7f3d0; }
-    h1 { margin:.25rem 0 0; font-size:1.85rem; }
-    .sub { color:var(--muted); margin:.25rem 0 0; }
-    .actions { margin-top:1rem; display:flex; gap:.5rem; flex-wrap:wrap; }
-    .btn { display:inline-block; padding:.6rem .9rem; border-radius:8px; border:1px solid var(--border); color:var(--text); text-decoration:none; }
-    .btn.primary { background:var(--accent); color:#052e14; border-color:#16a34a; font-weight:600; }
-    .btn.info { background:var(--accent-2); color:#062b3c; border-color:#0284c7; font-weight:600; }
-    main { padding:2rem 0; }
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(340px,1fr)); gap:1rem; }
-    .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.15rem; box-shadow:0 1px 12px rgba(0,0,0,.25); }
-    .card h2 { margin-top:0; }
-    dl { display:grid; grid-template-columns: 200px 1fr; gap:.35rem .75rem; margin:0; }
-    dt { color:var(--muted); }
-    dd { margin:0; }
+
+    /* ===== Base ===== */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans";
+      color: var(--ink); background: var(--bg);
+    }
+    a { color: var(--royal-mid); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ===== Header / Hero ===== */
+    .hero {
+      background: linear-gradient(135deg, var(--royal) 0%, var(--royal-dark) 80%);
+      color: #fff; padding: 2.5rem 1rem; border-bottom: 4px solid var(--royal-mid);
+    }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+    .brand { display: flex; align-items: center; gap: .85rem; }
+    .logo { width: 42px; height: 42px; border-radius: 10px; background: rgba(255,255,255,.12); display:flex; align-items:center; justify-content:center; box-shadow: var(--shadow); border: 2px solid rgba(255,255,255,.35); }
+    .logo span { font-weight: 900; font-size: 1.1rem; letter-spacing: .02em; }
+    .title { margin: .35rem 0 0; font-size: 2rem; }
+    .subtitle { margin: .35rem 0 0; color: #E6ECFF; }
+    .nav { margin-top: 1rem; display:flex; gap:.5rem; flex-wrap:wrap; }
+    .btn { display:inline-block; padding:.65rem 1rem; border-radius:10px; border:2px solid rgba(255,255,255,.35); color:#fff; }
+    .btn.primary { background:#fff; color: var(--royal-dark); border-color:#fff; font-weight:700; }
+    .btn.ghost { background:transparent; }
+
+    /* ===== Main ===== */
+    main { padding: 2rem 0; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.25rem; }
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; box-shadow: var(--shadow); }
+    .card h2 { margin-top: 0; color: var(--royal-dark); }
     .kpi { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.75rem; }
-    .pill { background:#0b1220; border:1px solid var(--border); border-radius:999px; padding:.3rem .6rem; font-size:.85rem; color:var(--muted); }
+    .pill { background:#fff; border:1px solid var(--border); border-radius:999px; padding:.35rem .6rem; font-size:.85rem; color: var(--muted); box-shadow: var(--shadow); }
+
+    /* ===== Definition list ===== */
+    dl { display:grid; grid-template-columns: 220px 1fr; gap:.5rem 1rem; margin:0; }
+    dt { color: var(--muted); }
+    dd { margin:0; font-weight:600; }
+
+    /* ===== Tables ===== */
     table { width:100%; border-collapse: collapse; }
-    th, td { border-bottom:1px solid var(--border); padding:.6rem .5rem; text-align:left; }
-    th { color:var(--muted); font-weight:600; }
-    tfoot td { color:var(--muted); }
-    .small { font-size:.9rem; color:var(--muted); }
-    .notice { border-left:3px solid var(--warn); padding:.5rem .75rem; background:#0b1220; color:var(--muted); border-radius:6px; }
-    .form { display:grid; gap:.6rem; max-width: 360px; }
-    .form label { font-size:.9rem; color:var(--muted); }
-    .input { width:100%; padding:.65rem .75rem; border-radius:8px; border:1px solid var(--border); background:var(--panel); color:var(--text); }
+    th, td { border-bottom:1px solid var(--border); padding:.65rem .5rem; text-align:left; }
+    th { color: var(--muted); font-weight:700; }
+    tfoot td { color: var(--muted); }
     .right { text-align:right; }
+
+    /* ===== Forms ===== */
+    .form { display:grid; gap:.7rem; max-width: 420px; }
+    .form label { font-size:.95rem; color: var(--muted); }
+    .input { width:100%; padding:.75rem .85rem; border-radius:10px; border:1px solid var(--border); background:#fff; color: var(--ink); box-shadow: var(--shadow); }
+    .cta { background: var(--royal-mid); color:#fff; border:none; padding:.7rem 1rem; border-radius:10px; font-weight:700; }
+    .cta.secondary { background: #fff; color: var(--royal-mid); border:2px solid var(--royal-mid); }
+
+    .notice { background:#fff; border-left:4px solid var(--warning); padding:.6rem .85rem; border-radius:10px; box-shadow: var(--shadow); color: var(--muted); }
     .hidden { display:none; }
-    footer { text-align:center; padding:2rem 1rem; color:var(--muted); border-top:1px solid var(--border); }
-    code { background:#0b1220; border:1px solid var(--border); padding:.1rem .35rem; border-radius:6px; }
+
+    /* ===== Footer ===== */
+    footer { text-align:center; padding: 2rem 1rem; color: var(--muted); border-top: 1px solid var(--border); }
+
+    /* ===== Print ===== */
+    @media print {
+      .hero, .nav, .cta, .btn { display:none !important; }
+      .card { box-shadow:none; border-color:#ccc; }
+      a { color:#000; }
+    }
   </style>
   <script>
-    // --- Editable equipment snapshot (static) ---
+    // ---- Static Equipment Data (edit as needed) ----
     const EQUIPMENT = {
       make: "Hydromatic (Pentair)",
-      model: "HVF200M3-2-20",            // ← replace with actual
-      serial: "SN-EXAMPLE-001",           // ← replace with actual
-      impeller_dia_in: 10.5,               // ← replace with actual
-      duty_point: "20 GPM @ 15 ft TDH",   // ← replace with actual
+      model: "HVF200M3-2-20",          // ← replace with actual
+      serial: "SN-EXAMPLE-001",         // ← replace with actual
+      impeller_dia_in: 10.5,             // ← replace with actual
+      duty_point: "20 GPM @ 15 ft TDH", // ← replace with actual
       service: "Municipal wastewater",
-      last_updated: "2026-01-14",
-      asset_id: "PMP-EXAMPLE-001"
+      asset_id: "PMP-EXAMPLE-001",
+      last_updated: "2026-01-14"
     };
 
-    // --- Fake technician auth (client-side only; demo purposes) ---
-    const DEMO_USER = "tech";
-    const DEMO_PASS = "demo123";
-
-    function populateSnapshot() {
-      for (const [k, v] of Object.entries(EQUIPMENT)) {
+    function populateEquipment() {
+      for (const [k,v] of Object.entries(EQUIPMENT)) {
         const el = document.querySelector(`[data-key="${k}"]`);
         if (el) el.textContent = v;
       }
     }
 
-    function fakeLogin(ev) {
-      ev.preventDefault();
+    // ---- Fake Technician Auth (client-side only; demo) ----
+    const DEMO_USER = "tech";
+    const DEMO_PASS = "demo123";
+
+    function fakeLogin(e) {
+      e.preventDefault();
       const u = document.getElementById('u').value.trim();
       const p = document.getElementById('p').value.trim();
       const msg = document.getElementById('login-msg');
@@ -81,10 +124,9 @@
         msg.textContent = '';
       } else {
         msg.textContent = 'Invalid credentials (use tech / demo123).';
-        msg.style.color = '#ef4444';
+        msg.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger');
       }
     }
-
     function fakeLogout() {
       document.getElementById('tech-area').classList.add('hidden');
       document.getElementById('login-card').classList.remove('hidden');
@@ -93,149 +135,152 @@
       document.getElementById('login-msg').textContent = '';
     }
 
-    window.addEventListener('DOMContentLoaded', populateSnapshot);
+    window.addEventListener('DOMContentLoaded', populateEquipment);
   </script>
 </head>
 <body>
-  <header>
+  <!-- ===== Hero ===== -->
+  <section class="hero">
     <div class="wrap">
       <div class="brand">
         <div class="logo"><span>P</span></div>
         <div>
-          <strong>PumpMan Pittsburgh</strong>
-          <div class="sub">PMP Equipment Portal — Hydromatic</div>
+          <strong style="font-size:1.05rem">PumpMan Pittsburgh</strong>
+          <div class="subtitle">Hydromatic Equipment Portal</div>
         </div>
       </div>
-      <h1 style="margin-top:1rem">Equipment Landing Page</h1>
-      <p class="sub">Static information for field technicians and stakeholders. For demo use only.</p>
-      <div class="actions">
-        <a class="btn primary" href="#technicians">Technicians</a>
-        <a class="btn info" href="#docs">Hydromatic Docs</a>
-        <a class="btn" href="#service-history">Service History</a>
+      <h1 class="title">Million‑Dollar Mockup</h1>
+      <p class="subtitle">Royal blue & white, polished UI, and all the features you need.</p>
+      <div class="nav">
+        <a class="btn primary" href="#equipment">Equipment Snapshot</a>
+        <a class="btn ghost" href="#docs">Docs</a>
+        <a class="btn ghost" href="#technicians">Technicians</a>
+        <a class="btn ghost" href="#service-history">Service History</a>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main class="wrap"> 
-    <!-- Equipment snapshot (read-only) -->
-    <section class="card" aria-label="Equipment Details">
-      <h2>Equipment Details</h2>
-      <dl>
-        <dt>Make</dt><dd data-key="make">Hydromatic (Pentair)</dd>
-        <dt>Model</dt><dd data-key="model">—</dd>
-        <dt>Serial Number</dt><dd data-key="serial">—</dd>
-        <dt>Impeller Diameter</dt><dd><span data-key="impeller_dia_in">—</span> in</dd>
-        <dt>Flow Conditions</dt><dd data-key="duty_point">—</dd>
-        <dt>Service</dt><dd data-key="service">—</dd>
-      </dl>
-      <div class="kpi">
-        <span class="pill">Asset: <span data-key="asset_id">PMP-EXAMPLE-001</span></span>
-        <span class="pill">Last updated: <span data-key="last_updated">2026-01-14</span></span>
-      </div>
-      <p class="small">Maintain values by editing the <code>EQUIPMENT</code> object in the HTML header. This is a static page (no database or submissions).</p>
-    </section>
-
-    <!-- Hydromatic docs -->
-    <section id="docs" class="card" style="margin-top:1rem" aria-label="Documentation">
-      <h2>Documentation (Hydromatic)</h2>
-      <ul>
-        <li>Submersible solids handling pumps IOM (S4/H4/S6/S8 series) — <a target="_blank" rel="noopener" href="https://www.pentair.com/content/dam/extranet/web/nam/hydromatic/commercial/manuals/e-03-491-s4-h4-s6x-s8-submersible-solids-handling-iom.pdf">PDF</a></li>
-        <li>Model S submersible solids handling pump — <a target="_blank" rel="noopener" href="https://www.pentair.com/content/dam/extranet/web/nam/hydromatic/commercial/manuals/e-03-304-model-s-submersible-solids-handling-pump-iom.pdf">PDF</a></li>
-        <li>HPE frame submersible solids handling — <a target="_blank" rel="noopener" href="https://www.pentair.com/content/dam/extranet/web/nam/hydromatic/commercial/manuals/e-03-559-056255591-hpe-320-360-frame-sub-solids-iom.pdf">PDF</a></li>
-        <li>Recessed impeller sewage pumps (S3H/S4N) — <a target="_blank" rel="noopener" href="https://www.pentair.com/content/dam/extranet/web/nam/hydromatic/commercial/manuals/hyd4528-s3h-s4n-recessed-impeller-submersible-sewage-iom.pdf">PDF</a></li>
-        <li>Pentair Download Center (search "Hydromatic") — <a target="_blank" rel="noopener" href="https://www.pentair.com/en-us/download-center.html">Website</a></li>
-        <li>Hydromatic Resources hub — <a target="_blank" rel="noopener" href="https://www.pentair.com/en-us/flow/hydromatic/hydromatic-resources.html">Website</a></li>
-      </ul>
-      <p class="notice">Links provided for convenience; confirm model-specific documents before service.</p>
-    </section>
-
-    <!-- Technician section with fake login and price page -->
-    <section id="technicians" style="margin-top:1rem">
-      <div id="login-card" class="card" aria-label="Technician Login (Demo)">
-        <h2>Technician Portal (Demo)</h2>
-        <p class="small">This is a <strong>simulated login</strong> for demonstration only. Use <code>tech</code> / <code>demo123</code>. No real authentication or data storage.</p>
-        <form class="form" onsubmit="fakeLogin(event)">
-          <div>
-            <label for="u">Username</label>
-            <input class="input" id="u" name="u" autocomplete="off" placeholder="tech" />
-          </div>
-          <div>
-            <label for="p">Password</label>
-            <input class="input" id="p" name="p" type="password" placeholder="demo123" />
-          </div>
-          <div style="display:flex; gap:.5rem; align-items:center;">
-            <button class="btn primary" type="submit">Sign in</button>
-            <span id="login-msg" class="small"></span>
-          </div>
-        </form>
-      </div>
-
-      <div id="tech-area" class="card hidden" aria-label="Technician Area">
-        <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem;">
-          <h2>Technician Dashboard (Demo)</h2>
-          <button class="btn" onclick="fakeLogout()">Logout</button>
+  <!-- ===== Main ===== -->
+  <main>
+    <div class="wrap">
+      <div id="equipment" class="card" aria-label="Equipment Details">
+        <h2>Equipment Snapshot</h2>
+        <dl>
+          <dt>Make</dt><dd data-key="make">Hydromatic (Pentair)</dd>
+          <dt>Model</dt><dd data-key="model">—</dd>
+          <dt>Serial Number</dt><dd data-key="serial">—</dd>
+          <dt>Impeller Diameter</dt><dd><span data-key="impeller_dia_in">—</span> in</dd>
+          <dt>Flow Conditions</dt><dd data-key="duty_point">—</dd>
+          <dt>Service</dt><dd data-key="service">—</dd>
+        </dl>
+        <div class="kpi">
+          <span class="pill">Asset: <span data-key="asset_id">PMP-EXAMPLE-001</span></span>
+          <span class="pill">Last updated: <span data-key="last_updated">2026-01-14</span></span>
         </div>
-        <div class="grid">
-          <div class="card">
-            <h3 style="margin-top:0">Quick Checks</h3>
-            <ul>
-              <li>Verify rotation; check amps vs nameplate</li>
-              <li>Inspect cable entry & strain relief</li>
-              <li>Seal chamber: moisture probe & oil condition</li>
-              <li>Impeller clearance & volute cleanliness</li>
-              <li>Level controls & check valve operation</li>
-            </ul>
+        <p class="notice">Static page for viewing only. Maintain values by editing the <code>EQUIPMENT</code> object in the header.</p>
+      </div>
+
+      <section id="docs" class="card" aria-label="Documentation" style="margin-top:1rem">
+        <h2>Hydromatic Documentation</h2>
+        <ul>
+          <li>Submersible solids handling pumps IOM (S4/H4/S6/S8 series) — <a target="_blank" rel="noopener" href="https://www.pentair.com/content/dam/extranet/web/nam/hydromatic/commercial/manuals/e-03-491-s4-h4-s6x-s8-submersible-solids-handling-iom.pdf">PDF</a></li>
+          <li>Model S submersible solids handling pump — <a target="_blank" rel="noopener" href="https://www.pentair.com/content/dam/extranet/web/nam/hydromatic/commercial/manuals/e-03-304-model-s-submersible-solids-handling-pump-iom.pdf">PDF</a></li>
+          <li>HPE frame submersible solids handling — <a target="_blank" rel="noopener" href="https://www.pentair.com/content/dam/extranet/web/nam/hydromatic/commercial/manuals/e-03-559-056255591-hpe-320-360-frame-sub-solids-iom.pdf">PDF</a></li>
+          <li>Recessed impeller sewage pumps (S3H/S4N) — <a target="_blank" rel="noopener" href="https://www.pentair.com/content/dam/extranet/web/nam/hydromatic/commercial/manuals/hyd4528-s3h-s4n-recessed-impeller-submersible-sewage-iom.pdf">PDF</a></li>
+          <li>Pentair Download Center (search "Hydromatic") — <a target="_blank" rel="noopener" href="https://www.pentair.com/en-us/download-center.html">Website</a></li>
+          <li>Hydromatic Resources hub — <a target="_blank" rel="noopener" href="https://www.pentair.com/en-us/flow/hydromatic/hydromatic-resources.html">Website</a></li>
+        </ul>
+      </section>
+
+      <!-- Technician Portal -->
+      <section id="technicians" style="margin-top:1rem">
+        <div id="login-card" class="card" aria-label="Technician Login (Demo)">
+          <h2>Technician Portal (Demo)</h2>
+          <p class="notice">This is a simulated login for demonstration only. Use <strong>tech</strong> / <strong>demo123</strong>. No data is stored.</p>
+          <form class="form" onsubmit="fakeLogin(event)">
+            <div>
+              <label for="u">Username</label>
+              <input id="u" class="input" placeholder="tech" autocomplete="off" />
+            </div>
+            <div>
+              <label for="p">Password</label>
+              <input id="p" class="input" type="password" placeholder="demo123" />
+            </div>
+            <div style="display:flex; gap:.75rem; align-items:center;">
+              <button class="cta" type="submit">Sign in</button>
+              <span id="login-msg" style="font-weight:700"></span>
+            </div>
+          </form>
+        </div>
+
+        <div id="tech-area" class="card hidden" aria-label="Technician Dashboard">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem;">
+            <h2 style="margin:0">Technician Dashboard (Demo)</h2>
+            <button class="cta secondary" onclick="fakeLogout()">Logout</button>
           </div>
-          <div class="card">
-            <h3 style="margin-top:0">Price Page (Sample Data)</h3>
-            <p class="small">Illustrative pricing only — not for quoting. Replace with real data offline.</p>
-            <table>
-              <thead>
-                <tr><th>Item</th><th>Part / Description</th><th class="right">Unit Price</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Seal Kit</td><td>Carbon/Ceramic, S4 series</td><td class="right">$265.00</td></tr>
-                <tr><td>Seal Kit (TC)</td><td>Tungsten Carbide faces</td><td class="right">$495.00</td></tr>
-                <tr><td>Impeller</td><td>10.5" Cast Iron, trimmed</td><td class="right">$780.00</td></tr>
-                <tr><td>Wear Ring</td><td>Bronze, S4 series</td><td class="right">$145.00</td></tr>
-                <tr><td>O-Ring Kit</td><td>Full pump set</td><td class="right">$58.00</td></tr>
-                <tr><td>Cable Gland</td><td>Entry kit w/ O-ring</td><td class="right">$84.00</td></tr>
-                <tr><td>Rail Bracket</td><td>2" guide rail bracket</td><td class="right">$210.00</td></tr>
-                <tr><td>Check Valve</td><td>4" swing, ductile iron</td><td class="right">$420.00</td></tr>
-              </tbody>
-              <tfoot>
-                <tr><td colspan="3" class="small">Prices are placeholders for demo; taxes, freight, and lead times not included.</td></tr>
-              </tfoot>
-            </table>
+          <div class="grid" style="margin-top:1rem">
+            <div class="card">
+              <h3 style="margin-top:0">Quick Checks</h3>
+              <ul>
+                <li>Verify rotation; check amps vs nameplate</li>
+                <li>Inspect cable entry & strain relief</li>
+                <li>Seal chamber: moisture probe & oil condition</li>
+                <li>Impeller clearance & volute cleanliness</li>
+                <li>Level controls & check valve operation</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 style="margin-top:0">Sample Price Page</h3>
+              <p class="notice">Illustrative pricing only — not for quoting. Replace with real data offline.</p>
+              <table>
+                <thead>
+                  <tr><th>Item</th><th>Part / Description</th><th class="right">Unit Price</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Seal Kit</td><td>Carbon/Ceramic, S4 series</td><td class="right">$265.00</td></tr>
+                  <tr><td>Seal Kit (TC)</td><td>Tungsten Carbide faces</td><td class="right">$495.00</td></tr>
+                  <tr><td>Impeller</td><td>10.5" Cast Iron, trimmed</td><td class="right">$780.00</td></tr>
+                  <tr><td>Wear Ring</td><td>Bronze, S4 series</td><td class="right">$145.00</td></tr>
+                  <tr><td>O-Ring Kit</td><td>Full pump set</td><td class="right">$58.00</td></tr>
+                  <tr><td>Cable Gland</td><td>Entry kit w/ O-ring</td><td class="right">$84.00</td></tr>
+                  <tr><td>Rail Bracket</td><td>2" guide rail bracket</td><td class="right">$210.00</td></tr>
+                  <tr><td>Check Valve</td><td>4" swing, ductile iron</td><td class="right">$420.00</td></tr>
+                </tbody>
+                <tfoot>
+                  <tr><td colspan="3" class="right">Subtotal (sample): $2,457.00</td></tr>
+                  <tr><td colspan="3" class="right"><em class="muted">Taxes, freight, and lead times not included.</em></td></tr>
+                </tfoot>
+              </table>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Simulated service history remains public -->
-    <section id="service-history" class="card" style="margin-top:1rem" aria-label="Service History">
-      <h2>Service History (Simulated — 2 Years, Quarterly)</h2>
-      <table>
-        <thead>
-          <tr><th>Date</th><th>WO #</th><th>Summary</th><th>Parts Used</th><th>Tech</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>2024-02-01</td><td>PM-2402-001</td><td>Quarterly PM: inspect clearances; test moisture sensor</td><td>—</td><td>DF</td></tr>
-          <tr><td>2024-05-01</td><td>PM-2405-002</td><td>Megger test windings; verify run amps; clean volute</td><td>—</td><td>TS</td></tr>
-          <tr><td>2024-08-01</td><td>PM-2408-003</td><td>Replace wear ring; confirm check valve operation</td><td>Wear ring</td><td>ED</td></tr>
-          <tr><td>2024-11-01</td><td>PM-2411-004</td><td>Oil sample from seal chamber; inspect cable entry</td><td>Seal oil (sample)</td><td>DF</td></tr>
-          <tr><td>2025-02-01</td><td>PM-2502-005</td><td>Verify rotation; check bearings for noise</td><td>—</td><td>TS</td></tr>
-          <tr><td>2025-05-01</td><td>PM-2505-006</td><td>Impeller cleaning (ragging); reassemble to torque spec</td><td>Hardware kit</td><td>ED</td></tr>
-          <tr><td>2025-08-01</td><td>PM-2508-007</td><td>Moisture sensor function test; replace cable gland O-ring</td><td>O-ring</td><td>DF</td></tr>
-          <tr><td>2025-11-01</td><td>PM-2511-008</td><td>Calibrate level controls; verify duplex alternation</td><td>—</td><td>TS</td></tr>
-        </tbody>
-      </table>
-      <p class="small">Swap this simulated table with CMMS export when available.</p>
-    </section>
+      <!-- Service history -->
+      <section id="service-history" class="card" style="margin-top:1rem" aria-label="Service History">
+        <h2>Service History (Simulated — 2 Years, Quarterly)</h2>
+        <table>
+          <thead>
+            <tr><th>Date</th><th>WO #</th><th>Summary</th><th>Parts Used</th><th>Tech</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2024-02-01</td><td>PM-2402-001</td><td>Quarterly PM: inspect clearances; test moisture sensor</td><td>—</td><td>DF</td></tr>
+            <tr><td>2024-05-01</td><td>PM-2405-002</td><td>Megger test windings; verify run amps; clean volute</td><td>—</td><td>TS</td></tr>
+            <tr><td>2024-08-01</td><td>PM-2408-003</td><td>Replace wear ring; confirm check valve operation</td><td>Wear ring</td><td>ED</td></tr>
+            <tr><td>2024-11-01</td><td>PM-2411-004</td><td>Oil sample from seal chamber; inspect cable entry</td><td>Seal oil (sample)</td><td>DF</td></tr>
+            <tr><td>2025-02-01</td><td>PM-2502-005</td><td>Verify rotation; check bearings for noise</td><td>—</td><td>TS</td></tr>
+            <tr><td>2025-05-01</td><td>PM-2505-006</td><td>Impeller cleaning (ragging); reassemble to torque spec</td><td>Hardware kit</td><td>ED</td></tr>
+            <tr><td>2025-08-01</td><td>PM-2508-007</td><td>Moisture sensor function test; replace cable gland O-ring</td><td>O-ring</td><td>DF</td></tr>
+            <tr><td>2025-11-01</td><td>PM-2511-008</td><td>Calibrate level controls; verify duplex alternation</td><td>—</td><td>TS</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
   </main>
 
+  <!-- ===== Footer ===== -->
   <footer>
-    <p>&copy; 2026 PumpMan Pittsburgh — Allison Park, PA</p>
+    <p>&copy; 2026 PumpMan Pittsburgh — Allison Park, PA • Built as a static demo for Hydromatic equipment documentation and service overview.</p>
   </footer>
 </body>
 </html>
