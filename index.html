@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PMP Landing Page</title>
+  <meta name="description" content="Quick landing page record for PumpMan Central" />
+  <style>
+    :root {
+      --bg: #0f172a; /* slate-900 */
+      --card: #111827; /* gray-900 */
+      --text: #e5e7eb; /* gray-200 */
+      --muted: #9ca3af; /* gray-400 */
+      --accent: #22c55e; /* green-500 */
+      --border: #1f2937; /* gray-800 */
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg); color: var(--text);
+    }
+    header { padding: 2rem 1rem; text-align: center; border-bottom: 1px solid var(--border); }
+    header h1 { margin: 0 0 .5rem; font-size: 2rem; }
+    header p { margin: 0; color: var(--muted); }
+    main { max-width: 960px; margin: 2rem auto; padding: 0 1rem; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 12px rgba(0,0,0,.25); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+    .field { display: flex; flex-direction: column; gap: .5rem; }
+    .label { font-size: .875rem; color: var(--muted); }
+    .value { background: #0b1220; border: 1px solid var(--border); border-radius: 8px; padding: .75rem 1rem; color: var(--text); }
+    .badge { display: inline-block; padding: .25rem .5rem; border-radius: .5rem; background: #064e3b; color: #a7f3d0; font-size: .75rem; }
+    .actions { margin-top: 1rem; display: flex; gap: .5rem; flex-wrap: wrap; }
+    .button { display:inline-block; padding:.6rem .9rem; border-radius:8px; border:1px solid var(--border); color:var(--text); text-decoration:none; }
+    .button.primary { background: var(--accent); color: #052e14; border-color: #16a34a; font-weight: 600; }
+    footer { text-align:center; padding: 2rem 1rem; color: var(--muted); border-top: 1px solid var(--border); }
+    code { background:#0b1220; padding:.15rem .35rem; border-radius:6px; border:1px solid var(--border); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PMP Landing Page</h1>
+    <p>PumpMan Central — quick equipment record</p>
+    <span class="badge">v1.0</span>
+  </header>
+
+  <main>
+    <section class="card" aria-label="Equipment Details">
+      <h2 style="margin-top:0">Equipment Details</h2>
+      <div class="grid">
+        <div class="field">
+          <span class="label">Make</span>
+          <div class="value" contenteditable="true" data-field="make">PumpMan Pittsburgh</div>
+        </div>
+        <div class="field">
+          <span class="label">Model</span>
+          <div class="value" contenteditable="true" data-field="model">ENTER MODEL HERE</div>
+        </div>
+        <div class="field">
+          <span class="label">Serial Number</span>
+          <div class="value" contenteditable="true" data-field="serial">ENTER SERIAL HERE</div>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="button primary" href="https://github.com/dfucichpmp/PumpManCentral" target="_blank" rel="noopener">Open Repository</a>
+        <a class="button" href="README.md">View README</a>
+      </div>
+    </section>
+
+    <section class="card" aria-label="Overview" style="margin-top:1rem">
+      <h2 style="margin-top:0">Overview</h2>
+      <p>This repository stores files, documentation, and quick references for PumpMan projects. Update the fields above to reflect equipment details. Consider adding photos under <code>assets/images</code> and documents under <code>docs/</code>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 PumpMan Pittsburgh — Allison Park, PA</p>
+  </footer>
+</body>
+</html>
